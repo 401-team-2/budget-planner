@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logger);
 
 
-app.use('/api/v1', v1Routes);
-app.use('/api/v2', v2Routes);
+app.use('/api', v1Routes);
+app.use('/api/restricted', v2Routes);
 app.use(authRoutes);
 
 app.use('*', notFoundHandler);

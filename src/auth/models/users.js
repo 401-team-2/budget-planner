@@ -24,10 +24,9 @@ const userModel = (sequelize, DataTypes) => {
       type: DataTypes.VIRTUAL,
       get() {
         const acl = {
-          user: ['read'],
-          writer: ['read', 'create'],
-          editor: ['read', 'create', 'update'],
-          admin: ['read', 'create', 'update', 'delete']
+          user: ['read', 'create', 'update'],
+          advisor: ['read'],
+          admin: ['read', 'delete']
         };
         return acl[this.role];
       }
